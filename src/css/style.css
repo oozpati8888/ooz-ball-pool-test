@@ -1,0 +1,160 @@
+/* global stuff */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    background-color: #111;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+main {
+    position: relative;
+}
+
+/* canvas */
+
+canvas {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 55px;
+
+}
+
+#tableCanvas {
+    box-shadow: 0px 0px 25px #caf3,
+    0px 0px 100px #caf2;
+}
+
+/* menu */
+
+menu {
+    padding: 30px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    outline: none;
+    border: none;
+    font-family: inherit;
+    font-size: inherit;
+    color: white;
+    font-size: 20px;
+    background: linear-gradient(hsl(130, 100%, 16%),hsl(130, 100%, 20%));
+    padding: 5px 15px; 
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover, button:focus-visible {
+    filter: brightness(1.2)
+}
+
+/* popup */
+
+dialog {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);    
+    z-index: 10;
+    font-size: 35px;
+    color: #111;
+    text-align: center;
+    background-color: #fffa;
+    border: none;
+    border-radius: 15px;
+    padding: 30px 40px;
+    box-shadow:  0px 0px 20px #000a;
+    opacity: 0;
+}
+
+dialog p {
+    margin-bottom: 20px;
+}
+
+dialog[open] {
+    opacity: 1;
+    animation: fadein 300ms ease-out forwards;
+}
+
+@keyframes fadein {
+    0% {
+        transform: translate(-50%,-50%) scale(0.4);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(-50%,-50%) scale(1);
+        opacity: 1;
+    }
+}
+
+dialog.close {
+    animation: fadeout 300ms ease-in forwards;
+}
+
+@keyframes fadeout {
+    0% {
+        transform: translate(-50%,-50%) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%,-50%) scale(0.4);
+        opacity: 0;
+    }
+}
+
+/* OOZ BALL – Gewinn- und Verlustfenster */
+
+.ooz-result {
+    min-width: 280px;
+    padding: 30px 24px;
+    text-align: center;
+    color: #ffffff;
+    border: 1px solid #d4af37;
+    border-radius: 20px;
+    background: linear-gradient(145deg, #18231f, #050807);
+    box-shadow: 0 0 35px rgba(212, 175, 55, 0.25);
+}
+
+.ooz-result-brand {
+    color: #d4af37;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 5px;
+}
+
+.ooz-result-icon {
+    margin: 20px 0 10px;
+    font-size: 58px;
+}
+
+.ooz-result h2 {
+    margin: 12px 0;
+    color: #f5d778;
+    font-size: 27px;
+    font-weight: 900;
+}
+
+.ooz-result p {
+    color: #d2d2d2;
+    font-size: 14px;
+}
+
+.ooz-result-btn {
+    margin-top: 20px;
+    padding: 13px 24px;
+    border: 0;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #f8df87, #b88620);
+    color: #17130a;
+    font-weight: 900;
+    cursor: pointer;
+}
